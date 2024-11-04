@@ -16,7 +16,7 @@ dict = {
 
 dirr = dict[d]
 
-while t>0:
+for _ in range(t):
     nr, nc = r+dx[dirr], c+dy[dirr]
     if not in_range(nr,nc):
         dirr = 3 - dirr
