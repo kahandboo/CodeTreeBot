@@ -22,6 +22,6 @@ for _ in range(t):
         dirr = 3 - dirr
     else:
         r,c = nr, nc
-    t -= 1
+
     
 print(r + 1,c + 1)
