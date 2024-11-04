@@ -6,7 +6,7 @@ n, t = map(int, input().split())
 r,c,d = input().split()
 r = int(r)
 c = int(c)
-dx, dy = [1,0,0,-1],[0,1,-1,0]
+dy, dx = [1,0,0,-1],[0,1,-1,0]
 dict = {
     'R':0,
     'U':2,
