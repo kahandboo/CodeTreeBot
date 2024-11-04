@@ -22,7 +22,7 @@ for _ in range(n):
         move_dir = 3
 
     x += dx[move_dir] * num
-    x += dy[move_dir] * num
+    y += dy[move_dir] * num
 
 
 print(x,y)
