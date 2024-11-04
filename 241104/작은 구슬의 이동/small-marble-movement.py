@@ -1,33 +1,27 @@
-def in_range(x, y, n):
-    return 0 < x <= n and 0 < y <= n
+def in_range(x,y):
+    return x>=0 and y>=0 and x<n and y<n
 
 n, t = map(int, input().split())
-r, c, d = input().split()
+
+r,c,d = input().split()
 r = int(r)
 c = int(c)
-
-dx = [0, 0, 1, -1]
-dy = [1, -1, 0, 0]
-r -= 1
-c -= 1
-direction_map = {
-    'D': 0,
-    'U': 1,
-    'R': 2,
-    'L': 3
+dx, dy = [1,0,0,-1],[0,1,-1,0]
+dict = {
+    'R':0,
+    'U':2,
+    'D':1,
+    'L':3
 }
 
-dirr = direction_map[d]
+dirr = dict[d]
 
-for _ in range(t):
-    nr = r + dx[dirr]
-    nc = c + dy[dirr]
+while t>0:
+    nr, nc = r+dx[dirr], c+dy[dirr]
+    if not in_range(nr,nc):
+        dirr = 3 - dirr
+    else:
+        r,c = nr, nc
+    t -= 1
     
-    if not in_range(nr, nc, n):
-        dirr = (dirr + 2) % 4
-        nr = r + dx[dirr]
-        nc = c + dy[dirr]
-
-    r, c = nr, nc
-
-print(r, c)
+print(r + 1,c + 1)
